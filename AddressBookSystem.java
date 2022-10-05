@@ -1,26 +1,24 @@
 package com.bridgelabz;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class AddressBookSystem {
     class Contacts {
-        static void createContact(String full_name, String address, String city, String state, String zipCode, String mobile_No, String email) {
+        static void createContact() {
             ArrayList<String> firstContact = new ArrayList<String>(7);
-
-            firstContact.add(full_name);
-            firstContact.add(address);
-            firstContact.add(city);
-            firstContact.add(state);
-            firstContact.add(zipCode);
-            firstContact.add(mobile_No);
-            firstContact.add(email);
-
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter the contact details  : ");
+            System.out.println("Name Address City State Zipcode PhoneNo EmailId  : ");
+            for (int i = 0; i < 7; i++) {
+                String k = sc.nextLine();
+                firstContact.add(k);
+            }
             System.out.println(firstContact );
-
         }
     }
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book System Program");
-        Contacts.createContact("Sayyed Mutallib","Koregaon Bhima","Pune","Maharashtra","412216","9518553297","smutallib97@gmail.com");
+        Contacts.createContact();
     }
 }
