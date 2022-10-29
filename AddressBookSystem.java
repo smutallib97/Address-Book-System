@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class AddressBookSystem {
     class Contacts {
         static ArrayList<String> contacts = new ArrayList<String>(7);
+        static ArrayList<String> secondContact = new ArrayList<String>(7);
         static Scanner sc = new Scanner(System.in);
 
         static void createContact() {
@@ -20,7 +21,22 @@ public class AddressBookSystem {
             System.out.println("contact details added :");
             System.out.println(contacts);
         }
+        static void createSecondContact() {
 
+            System.out.println("******************************************");
+            System.out.println("Create Second Contact details: ");
+            System.out.println("name address city state zip phoneNo email  : ");
+
+            /** adding contact details from console **/
+
+            for (int i = 0; i < 7; i++) {
+                String s = sc.nextLine();
+                secondContact.add(s);
+            }
+            System.out.println(" -------------------------------------------");
+            System.out.println("contact details added :");
+            System.out.println(secondContact);
+        }
         static void editContact() {
             System.out.println(" ");
             System.out.println("Enter which detail you have to edit  : ");
@@ -81,7 +97,7 @@ public class AddressBookSystem {
             System.out.println(" ");
             System.out.println("Enter the name of contact that have to delete  : ");
             String nameToDelete = sc.nextLine();
-            
+
             if (nameToDelete.equals(contacts.get(0))) {
                 contacts.removeAll(contacts);
                 System.out.println(" ");
@@ -103,5 +119,7 @@ public class AddressBookSystem {
         Contacts.editContact();
         System.out.println("================================");
         Contacts.deleteContact();
+        System.out.println("================================");
+        Contacts.createSecondContact();
     }
 }
